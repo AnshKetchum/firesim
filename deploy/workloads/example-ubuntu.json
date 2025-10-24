@@ -1,0 +1,16 @@
+{
+	"benchmark_name": "example-ubuntu",
+	"common_simulation_outputs": [
+		"uartlog"
+	],
+	"workloads": [
+		{
+			"name": "example-ubuntu-qsort",
+			"bootbinary": "../../../../../software/firemarshal/images/firechip/example-ubuntu-qsort/example-ubuntu-qsort-bin",
+			"rootfs": "../../../../../software/firemarshal/images/firechip/example-ubuntu-qsort/example-ubuntu-qsort.img",
+			"outputs": [
+				"/root/run_result.csv"
+			]
+		}
+	]
+}
