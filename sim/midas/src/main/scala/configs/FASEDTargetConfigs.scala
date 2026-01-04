@@ -116,3 +116,19 @@ class FRFCFS16GBQuadRankLLC4MB
       new WithLLCModel(4096, 8) ++
         new FRFCFS16GBQuadRank
     )
+
+// Simple pass-through model configuration
+class WithSimplePassThrough(readLatency: Int = 10, writeLatency: Int = 5)
+    extends Config((site, _, _) => { 
+      case MemModelKey => new SimplePassThroughConfig(
+        readLatency = readLatency,
+        writeLatency = writeLatency,
+        params = site(BaseParamsKey)
+      )
+    })
+
+// Complete configuration
+class SimplePassThrough16GB extends Config(
+  new WithSimplePassThrough(readLatency = 10, writeLatency = 5) ++
+  new WithDefaultMemModel
+)
