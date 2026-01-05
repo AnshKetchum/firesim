@@ -1,2 +1,2 @@
-CYDIR=/workspace/chipyard
-USER=root
+export CYDIR=/external-workspace/chipyard
+export USER=root
